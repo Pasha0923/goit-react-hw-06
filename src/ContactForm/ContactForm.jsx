@@ -1,6 +1,8 @@
 import { Formik, ErrorMessage, Field, Form } from "formik";
 import css from "./ContactForm.module.css";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { addContact } from "../redux/contactsSlice";
 const INITIAL_FORM_DATA = {
   userName: "",
   number: "",
@@ -16,10 +18,13 @@ const contactFormSchema = Yup.object().shape({
     .max(50, "Too long!")
     .required("Required!"),
 });
-const ContactForm = ({ onAddNewContacts }) => {
-  const handleSubmit = (data, actions) => {
-    onAddNewContacts(data);
-    console.log(data);
+const ContactForm = () => {
+  // Команду на виконная коду блоку редбюсерів (зміну state)
+  // надсилаємо через хук Dispatch
+  const dispatch = useDispatch();
+  const handleSubmit = (values, actions) => {
+    console.log("values: ", values);
+    dispatch(addContact(values.userName, values.number));
     actions.resetForm();
   };
   return (
