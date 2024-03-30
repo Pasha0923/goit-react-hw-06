@@ -1,7 +1,7 @@
 import css from "./ContactList.module.css";
 import Contact from "../Contact/Contact";
 import { useSelector } from "react-redux";
-import { selectContacts, selectNameFilter } from "../selectors/selectors";
+import { selectContacts, selectNameFilter } from "../../selectors/selectors";
 
 const ContactList = () => {
   // Отримуємо посилання на функцію відправки екшенів за допомогою хука useSelector

@@ -2,7 +2,7 @@ import { Formik, ErrorMessage, Field, Form } from "formik";
 import css from "./ContactForm.module.css";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { addContact } from "../redux/contactsSlice";
+import { addContact } from "../../redux/contactsSlice";
 const INITIAL_FORM_DATA = {
   userName: "",
   number: "",

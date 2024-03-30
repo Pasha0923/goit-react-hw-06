@@ -3,7 +3,7 @@ import { IoPerson } from "react-icons/io5";
 import { AiOutlineUserDelete } from "react-icons/ai";
 import css from "./Contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../redux/contactsSlice";
+import { deleteContact } from "../../redux/contactsSlice";
 
 const Contact = ({ id, userName, number }) => {
   const dispatch = useDispatch();
